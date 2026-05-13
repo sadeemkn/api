@@ -1,9 +1,9 @@
-<form id="upload">
-  <input type="file" id="file" />
-<button id="uploadBtn">Upload</button></form>
+<input type="file" id="fileInput">
+
+<button onclick="uploadFile()">Upload</button>
 
 <script>
-document.getElementById("uploadBtn").addEventListener("click", async () => {
+async function uploadFile() {
   const file = document.getElementById("fileInput").files[0];
 
   if (!file) {
@@ -23,5 +23,5 @@ document.getElementById("uploadBtn").addEventListener("click", async () => {
   const data = await res.json();
   console.log("Response:", data);
   alert("الفنكشن اشتغلت! شوفي الـ console.");
-});
+}
 </script>
